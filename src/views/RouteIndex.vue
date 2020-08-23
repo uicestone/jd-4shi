@@ -1,9 +1,9 @@
 <template lang="pug">
 #route
   header(:class="routeName")
-    img(:src="'/images/title-'+routeName+'.png'")
+    img(:src="'/images/title-' + routeName + '.png'")
   #slogan
-    img(:src="'/images/slogan-'+routeName+'.png'")
+    img(:src="'/images/slogan-' + routeName + '.png'")
   #content(v-html="content")
   #list
     ul(:class="routeName")
@@ -32,8 +32,8 @@ export default Vue.extend({
 >
 <style lang="stylus" scoped>
 header
-  height: 50px;
-  display: flex;
+  height 50px
+  display flex
   &.hs
     background-color #a50000
   &.fd
@@ -61,8 +61,8 @@ header
 #list
   padding 0 7.5%
   ul
-    margin: 0;
-    padding: 0;
+    margin 0
+    padding 0
     li
       list-style none
       font-size 16px
