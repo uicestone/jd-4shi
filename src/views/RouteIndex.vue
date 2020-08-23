@@ -32,8 +32,13 @@ export default Vue.extend({
 </script>
 >
 <style lang="stylus" scoped>
+#route
+  display flex
+  flex-direction column
+  height 100vh
 header
   height 50px
+  flex 0 0 50px
   display flex
   &.hs
     background-color #a50000
@@ -47,6 +52,7 @@ header
 #slogan
   display flex
   height 70px
+  flex 0 0 70
   img
     width 150px
     margin auto
@@ -60,6 +66,8 @@ header
     text-align justify
     line-height 2
 #list
+  flex 1
+  overflow-y auto
   padding 0 7.5%
   ul
     li
@@ -69,6 +77,7 @@ header
       height 40px
       border 2px solid #ddd
       border-radius 15px
+      margin-bottom 8px
       a
         display flex
         justify-content center
