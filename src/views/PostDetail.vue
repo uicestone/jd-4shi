@@ -1,11 +1,7 @@
 <template lang="pug">
-div
-  header {{ post.categories[0].cat_name }}
-  .post-entry
-    .title {{ post.title }}
-    .poster
-      img(:src="post.poster")
-    .content(v-html="post.content")
+div(:class="routeName")
+  header {{ post.title }}
+  #content(v-html="post.content")
 </template>
 
 <script>
@@ -13,9 +9,10 @@ import { getPostDetail } from "@/helpers/resource";
 
 export default {
   data() {
-    return { id: null, post: { categories: [{}] } };
+    return { routeName: "", id: null, post: { categories: [{}] } };
   },
   async mounted() {
+    this.routeName = this.$route.query.route;
     this.id = this.$route.params.id;
     this.post = await getPostDetail(this.id);
   },
@@ -24,27 +21,39 @@ export default {
 
 <style lang="stylus" scoped>
 header
-  background #d42d26
-  padding 10px
-  text-align center
+  height 70px
+  display flex
+  justify-content center
+  align-items center
   color white
-  font-size 28px
   font-weight bold
-  border-bottom solid 8px #5d4d41
-.post-entry
-  padding 30px
-  .title
-    color white
-    background #c69842
-    padding 5px 20px
-    text-align center
-  .content
-    /deep/ img
+  font-size 22px
+.hs
+  header
+    background-color #a50000
+  >>> ul
+    border-color #a50000 !important
+.fd header
+  background-color #b18855
+  >>> ul
+    border-color #b18855 !important
+.qc header
+  background-color #215eaa
+  >>> ul
+    border-color #215eaa !important
+#content
+  padding 0 7.5%
+  >>> p
+    text-align justify
+    text-indent 2em
+    line-height 1.75
+    img
       width 100%
       height auto
-      margin 10px auto
-    /deep/ p, /deep/ li
-      text-align justify !important
-    /deep/ p
-      margin-bottom 0.5em
+      margin-left -2em
+  >>> ul
+    line-height 2
+    border-top 2px solid
+    border-bottom 2px solid
+    padding 5px 0
 </style>

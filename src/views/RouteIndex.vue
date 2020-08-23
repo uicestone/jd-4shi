@@ -7,7 +7,8 @@
   #content(v-html="content")
   #list
     ul(:class="routeName")
-      li(v-for="site in sites") {{ site.title }}
+      li(v-for="site in sites")
+        router-link(:to="`/post/${site.id}?route=${routeName}`") {{ site.title }}
 </template>
 <script>
 import Vue from "vue";
@@ -61,8 +62,6 @@ header
 #list
   padding 0 7.5%
   ul
-    margin 0
-    padding 0
     li
       list-style none
       font-size 16px
@@ -70,10 +69,12 @@ header
       height 40px
       border 2px solid #ddd
       border-radius 15px
-      display flex
-      justify-content center
-      align-items center
-      color #3e3a39
+      a
+        display flex
+        justify-content center
+        align-items center
+        text-decoration none
+        height 100%
     &.hs li
       border-color #a50000
     &.fd li
