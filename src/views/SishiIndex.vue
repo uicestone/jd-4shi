@@ -24,7 +24,7 @@ header, section, footer
     margin 0
     font-size 16px
     text-align center
-    margin-top -20px
+    margin-top -10px
     font-weight bold
     color #c30d23
     margin-bottom 10px
