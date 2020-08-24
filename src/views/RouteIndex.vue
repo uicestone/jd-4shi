@@ -26,7 +26,10 @@ export default Vue.extend({
     this.routeName = this.$route.params.name;
     const routePost = await getPostDetail(`route-${this.routeName}`);
     this.content = routePost.content;
-    this.sites = await getPosts({ category: `route-${this.routeName}` });
+    this.sites = await getPosts({
+      category: `route-${this.routeName}`,
+      limit: -1,
+    });
   },
 });
 </script>
