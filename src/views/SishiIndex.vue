@@ -14,10 +14,11 @@
       router-link(to="route/qc")
         img(src="/images/route-qc.png")
   footer
-    img(src="/images/home-footer.jpg")
+    p 嘉定区委“四史”学习领导小组办公室
+    p 二〇二〇年六月
 </template>
 <style lang="stylus" scoped>
-header, section, footer
+header, section
   img
     width 100%
   p
@@ -35,7 +36,18 @@ section
 #page
   margin-bottom 60px
 footer
+  background url('/images/home-footer.jpg') center
   position fixed
   bottom 0
-  line-height 0
+  height 75px
+  width 100%
+  background-size cover
+  display flex
+  flex-direction column
+  justify-content center
+  align-items center
+  p
+    color #595758
+    margin 0
+    font-weight bold
 </style>
