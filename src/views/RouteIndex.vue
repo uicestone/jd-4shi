@@ -1,12 +1,12 @@
 <template lang="pug">
-#route
-  header(:class="routeName")
+#route(:class="routeName")
+  header
     img(:src="'/images/title-' + routeName + '.png'")
   #slogan
     img(:src="'/images/slogan-' + routeName + '.png'")
   #content(v-html="content")
   #list
-    ul(:class="routeName")
+    ul
       li(v-for="site in sites")
         router-link(:to="`/post/${site.id}?route=${routeName}`") {{ site.title }}
 </template>
@@ -39,16 +39,27 @@ export default Vue.extend({
   display flex
   flex-direction column
   height 100vh
+  &.hs
+    header
+      background-color #a50000
+    #list ul li
+      border-color #a50000
+  &.fd
+    header
+      background-color #b18855
+    #list ul li
+      border-color #b18855
+  &.qc
+    header
+      background-color #215eaa
+    #slogan img
+      width 200px
+    #list ul li
+      border-color #215eaa
 header
   height 50px
   flex 0 0 50px
   display flex
-  &.hs
-    background-color #a50000
-  &.fd
-    background-color #b18855
-  &.qc
-    background-color #215eaa
   img
     width 70px
     margin auto
@@ -87,10 +98,4 @@ header
         align-items center
         text-decoration none
         height 100%
-    &.hs li
-      border-color #a50000
-    &.fd li
-      border-color #b18855
-    &.qc li
-      border-color #215eaa
 </style>
