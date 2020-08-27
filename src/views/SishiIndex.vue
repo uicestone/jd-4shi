@@ -2,7 +2,6 @@
 #index
   header
     img(src="/images/home-header.jpg")
-    p 党史·新中国史·改革开放史·社会主义发展史
   #page
     section
       router-link(to="route/hs")
