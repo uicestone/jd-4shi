@@ -13,7 +13,7 @@
       router-link(to="route/qc")
         img(src="/images/route-qc.png")
   footer
-    p 嘉定区委“四史”学习领导小组办公室
+    p 嘉定区委“四史”教育学习领导小组办公室
     p 二〇二〇年六月
 </template>
 <style lang="stylus" scoped>
