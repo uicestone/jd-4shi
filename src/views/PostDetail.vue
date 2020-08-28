@@ -21,13 +21,14 @@ export default {
 
 <style lang="stylus" scoped>
 header
-  height 70px
+  min-height 60px
   display flex
   justify-content center
   align-items center
   color white
   font-weight bold
   font-size 22px
+  padding 5px 20px
 .hs
   header
     background-color #a50000
